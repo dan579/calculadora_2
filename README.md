@@ -1,16 +1,27 @@
-# calculadora_2
+Documentação do Projeto: Calculadora Simples
 
-A new Flutter project.
+Visão Geral
+Este repositório contém o código-fonte e os recursos para uma aplicação de calculadora simples desenvolvida usando o Flutter. A aplicação permite que os usuários realizem operações de cálculo básicas, como adição, subtração, multiplicação e divisão.
 
-## Getting Started
+Tecnologias Utilizadas
+Flutter 3.13.7
+Dart 3.1.3
 
-This project is a starting point for a Flutter application.
+Funcionalidades
+Adição, subtração, multiplicação e divisão de números.
+Limpeza da tela de resultados.
 
-A few resources to get you started if this is your first Flutter project:
+Como Executar
+Para executar o projeto em seu ambiente de desenvolvimento, siga as etapas abaixo:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Clone este repositório em seu computador:
+https://github.com/dan579/calculadora_2.git
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Abra o projeto no Android Studio.
+Execute a aplicação no seu emulador ou dispositivo Android.
+
+Contribuições
+Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novos recursos. Para contribuir, siga as diretrizes de contribuição no arquivo CONTRIBUTING.md.
+
+Autor
+Daniel Santos da Silva
