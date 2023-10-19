@@ -58,16 +58,24 @@ class _MyHomePageState extends State<MyHomePage> {
     return Expanded(
       child: Container(
         padding: EdgeInsets.all(24.0),
-        child: TextButton(
-          onPressed: () => _buttonPressed(buttonText),
+        decoration: BoxDecoration(border: Border.all(width: 1, color: Colors.black.withOpacity(0.2),
+        ),
+        ),
+        child: InkWell(
+          onTap: ()  => _buttonPressed(buttonText),
+          focusColor: Colors.indigoAccent,
+          borderRadius: BorderRadius.zero,
+          radius: double.maxFinite,
+          autofocus: false,
           child: Text(
+            textAlign: TextAlign.center,
             buttonText,
             style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
             ),
           ),
-         ),
+        ),
       ),
     );
   }
@@ -86,9 +94,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Colors.blueGrey,
         title: Text(widget.title),
       ),
+      backgroundColor: Colors.white54.withOpacity(0.9),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -101,16 +110,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold),
               ),
             ),
-            Column(
-              children: <Widget>[
+            Divider(
+              color: Colors.black12,
+            ),
                 Row(
-                  children: [
-                    _buildButton('7'),
-                    _buildButton('8'),
-                    _buildButton('9'),
-                    _buildButton('/'),
-                  ],
-                ),
+                      children: [
+                        _buildButton('7'),
+                        _buildButton('8'),
+                        _buildButton('9'),
+                        _buildButton('/'),
+                      ],
+                    ),
                 Row(
                   children: [
                     _buildButton('4'),
@@ -135,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     _buildButton('+'),
                   ],
                 ),
-                Stack(
+            Stack(
                   alignment: Alignment.center,
                   children: [
                     Container(
@@ -144,10 +154,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(56)),
                         shape: BoxShape.rectangle,
-                        color: Colors.blue,
+                        color: Colors.blueAccent,
                       ),
                     ),
-
                     Flex(
                       direction: Axis.horizontal,
                       children: [
@@ -159,9 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-          ],
         ),
-      ),
-    );
+      );
   }
 }
