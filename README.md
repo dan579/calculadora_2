@@ -4,8 +4,8 @@ Visão Geral
 Este repositório contém o código-fonte e os recursos para uma aplicação de calculadora simples desenvolvida usando o Flutter. A aplicação permite que os usuários realizem operações de cálculo básicas, como adição, subtração, multiplicação e divisão.
 
 Tecnologias Utilizadas
-Flutter
-Dart
+Flutter 3.13.7
+Dart 3.1.3
 
 Funcionalidades
 Adição, subtração, multiplicação e divisão de números.
