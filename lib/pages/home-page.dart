@@ -55,20 +55,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildNumberButton(String buttonText) {
     return Expanded(
-      child: Container(
-        padding: EdgeInsets.all(24.0),
-        decoration: BoxDecoration(
-          color: Colors.grey,
-          border: Border.all(width: 1, color: Colors.black,
-        ),
-        ),
-        child: InkWell(
+      child: InkWell(
           onTap: ()  => _buttonPressed(buttonText),
-          focusColor: Colors.indigoAccent,
           borderRadius: BorderRadius.zero,
           radius: double.maxFinite,
           autofocus: false,
-          child: Text(
+          child: Container(
+            padding: EdgeInsets.all(24.0),
+            decoration: BoxDecoration(
+              color: Colors.white54.withOpacity(0.7),
+              border: Border.all(width: 1, color: Colors.black,
+              ),
+            ),
+            child: Text(
             textAlign: TextAlign.center,
             buttonText,
             style: TextStyle(
@@ -83,19 +82,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildOperationButton(String buttonText) {
     return Expanded(
-      child: Container(
-        padding: EdgeInsets.all(24.0),
-        decoration: BoxDecoration(
-          color: Colors.deepOrangeAccent.withOpacity(0.8),
-          border: Border.all(width: 1, color: Colors.black,),
-        ),
         child: InkWell(
           onTap: ()  => _buttonPressed(buttonText),
-          focusColor: Colors.indigoAccent,
           borderRadius: BorderRadius.zero,
           radius: double.maxFinite,
           autofocus: false,
-          child: Text(
+        child: Container(
+            padding: EdgeInsets.all(24.0),
+      decoration: BoxDecoration(
+        color: Colors.amberAccent.withOpacity(0.8),
+        border: Border.all(width: 1, color: Colors.black,),
+      ),
+      child: Text(
             textAlign: TextAlign.center,
             buttonText,
             style: TextStyle(
