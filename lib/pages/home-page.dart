@@ -119,64 +119,69 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
+
         backgroundColor: Colors.blueGrey,
         title: Text(widget.title),
       ),
       backgroundColor: Colors.black,
-      bottomNavigationBar: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Container(
-            alignment: Alignment.centerRight,
-            padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 24.0),
-            child: Text(
-              _output,
-              style: TextStyle(
-                  fontSize: 48.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-            ),
-          ),
-          Row(
-            children: [
-              _buildNumberButton('7'),
-              _buildNumberButton('8'),
-              _buildNumberButton('9'),
-              _buildOperationButton('/'),                      ],
-          ),
-          Row(
-            children: [
-              _buildNumberButton('4'),
-              _buildNumberButton('5'),
-              _buildNumberButton('6'),
-              _buildOperationButton('*'),
-            ],
-          ),
-          Row(
-            children: [
-              _buildNumberButton('1'),
-              _buildNumberButton('2'),
-              _buildNumberButton('3'),
-              _buildOperationButton('-'),
-            ],
-          ),
-          Row(
-            children: [
-              _buildNumberButton('.'),
-              _buildNumberButton('0'),
-              _buildNumberButton('C'),
-              _buildOperationButton('+'),
-            ],
-          ),
-          Flex(
-            direction: Axis.horizontal,
-            children: [
-              _buildNumberButton('='),
-            ],
-          ),
-        ],
+      body: Container(
+        alignment: Alignment.bottomRight,
+        padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 24.0),
+        child: Text(
+          _output,
+          style: TextStyle(
+              fontSize: 48.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white),
+        ),
+      ),
+      bottomNavigationBar: SingleChildScrollView(
+         child: Column(
+           crossAxisAlignment: CrossAxisAlignment.end,
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: <Widget>[
+             Row(
+               children: [
+                 _buildNumberButton('7'),
+                 _buildNumberButton('8'),
+                 _buildNumberButton('9'),
+                 _buildOperationButton('/'),                      ],
+             ),
+             Row(
+               children: [
+                 _buildNumberButton('4'),
+                 _buildNumberButton('5'),
+                 _buildNumberButton('6'),
+                 _buildOperationButton('*'),
+               ],
+             ),
+             Row(
+               children: [
+                 _buildNumberButton('1'),
+                 _buildNumberButton('2'),
+                 _buildNumberButton('3'),
+                 _buildOperationButton('-'),
+               ],
+             ),
+             Row(
+               children: [
+                 _buildNumberButton('.'),
+                 _buildNumberButton('0'),
+                 _buildNumberButton('C'),
+                 _buildOperationButton('+'),
+               ],
+             ),
+             Flex(
+               direction: Axis.horizontal,
+               children: [
+                 _buildNumberButton('='),
+               ],
+             ),
+           ],
+         ),
       ),
         );
   }
