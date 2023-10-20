@@ -20,8 +20,5 @@ https://github.com/dan579/calculadora_2.git
 Abra o projeto no Android Studio.
 Execute a aplicação no seu emulador ou dispositivo Android.
 
-Contribuições
-Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novos recursos. Para contribuir, siga as diretrizes de contribuição no arquivo CONTRIBUTING.md.
-
 Autor
 Daniel Santos da Silva
