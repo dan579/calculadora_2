@@ -1,4 +1,3 @@
-import 'package:calculadora_2/main.dart';
 import 'package:flutter/material.dart';
 
 
@@ -54,12 +53,41 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {});
   }
 
-  Widget _buildButton(String buttonText) {
+  Widget _buildNumberButton(String buttonText) {
     return Expanded(
       child: Container(
         padding: EdgeInsets.all(24.0),
-        decoration: BoxDecoration(border: Border.all(width: 1, color: Colors.black.withOpacity(0.2),
+        decoration: BoxDecoration(
+          color: Colors.grey,
+          border: Border.all(width: 1, color: Colors.black,
         ),
+        ),
+        child: InkWell(
+          onTap: ()  => _buttonPressed(buttonText),
+          focusColor: Colors.indigoAccent,
+          borderRadius: BorderRadius.zero,
+          radius: double.maxFinite,
+          autofocus: false,
+          child: Text(
+            textAlign: TextAlign.center,
+            buttonText,
+            style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildOperationButton(String buttonText) {
+    return Expanded(
+      child: Container(
+        padding: EdgeInsets.all(24.0),
+        decoration: BoxDecoration(
+          color: Colors.deepOrangeAccent.withOpacity(0.8),
+          border: Border.all(width: 1, color: Colors.black,),
         ),
         child: InkWell(
           onTap: ()  => _buttonPressed(buttonText),
@@ -97,78 +125,61 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.blueGrey,
         title: Text(widget.title),
       ),
-      backgroundColor: Colors.white54.withOpacity(0.9),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              alignment: Alignment.centerRight,
-              padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 24.0),
-              child: Text(
-                _output,
-                style: TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold),
-              ),
+      backgroundColor: Colors.black,
+      bottomNavigationBar: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            alignment: Alignment.centerRight,
+            padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 24.0),
+            child: Text(
+              _output,
+              style: TextStyle(
+                  fontSize: 48.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
-            Divider(
-              color: Colors.black12,
-            ),
-                Row(
-                      children: [
-                        _buildButton('7'),
-                        _buildButton('8'),
-                        _buildButton('9'),
-                        _buildButton('/'),
-                      ],
-                    ),
-                Row(
-                  children: [
-                    _buildButton('4'),
-                    _buildButton('5'),
-                    _buildButton('6'),
-                    _buildButton('*'),
-                  ],
-                ),
-                Row(
-                  children: [
-                    _buildButton('1'),
-                    _buildButton('2'),
-                    _buildButton('3'),
-                    _buildButton('-'),
-                  ],
-                ),
-                Row(
-                  children: [
-                    _buildButton('.'),
-                    _buildButton('0'),
-                    _buildButton('C'),
-                    _buildButton('+'),
-                  ],
-                ),
-            Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      height: 50.0,
-                      width:   MediaQuery.of(context).size.width/ 1.15,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(56)),
-                        shape: BoxShape.rectangle,
-                        color: Colors.blueAccent,
-                      ),
-                    ),
-                    Flex(
-                      direction: Axis.horizontal,
-                      children: [
-                        _buildButton('='),
-                    ],
-                    ),
-                  ],
-
-                ),
-              ],
-            ),
-        ),
-      );
+          ),
+          Row(
+            children: [
+              _buildNumberButton('7'),
+              _buildNumberButton('8'),
+              _buildNumberButton('9'),
+              _buildOperationButton('/'),                      ],
+          ),
+          Row(
+            children: [
+              _buildNumberButton('4'),
+              _buildNumberButton('5'),
+              _buildNumberButton('6'),
+              _buildOperationButton('*'),
+            ],
+          ),
+          Row(
+            children: [
+              _buildNumberButton('1'),
+              _buildNumberButton('2'),
+              _buildNumberButton('3'),
+              _buildOperationButton('-'),
+            ],
+          ),
+          Row(
+            children: [
+              _buildNumberButton('.'),
+              _buildNumberButton('0'),
+              _buildNumberButton('C'),
+              _buildOperationButton('+'),
+            ],
+          ),
+          Flex(
+            direction: Axis.horizontal,
+            children: [
+              _buildNumberButton('='),
+            ],
+          ),
+        ],
+      ),
+        );
   }
 }
