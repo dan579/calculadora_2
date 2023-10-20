@@ -1,7 +1,7 @@
 Documentação do Projeto: Calculadora Simples
 
 Visão Geral
-Este repositório contém o código-fonte e os recursos para uma aplicação de calculadora simples desenvolvida usando o Flutter. A aplicação permite que os usuários realizem operações de cálculo básicas, como adição, subtração, multiplicação e divisão.
+Este repositório contém o código-fonte e os recursos para uma aplicação de calculadora simples desenvolvida usando o Flutter sem utilização de bibliotecas. A aplicação permite que os usuários realizem operações de cálculo básicas, como adição, subtração, multiplicação e divisão.
 
 Tecnologias Utilizadas
 Flutter 3.13.7
